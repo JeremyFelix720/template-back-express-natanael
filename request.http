@@ -18,3 +18,6 @@ Content-Type: application/json
 
 ###
 GET {{start_url}}/api/object/
+
+###
+GET {{start_url}}/api/object/1

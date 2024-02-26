@@ -25,6 +25,14 @@ objectRouter.post("/add", async (req, res) => {
 
 // Lecture des objets
 objectRouter.get("/", async (req, res) => {
-  const objects = await Object.findAll();
-  res.json(objects);
+  const savedObjects = await Object.findAll();
+  res.json(savedObjects);
 });
+
+
+// Lecture d'un objet
+objectRouter.get("/:id", async (req, res) => {
+  const objectId = req.params.id;
+  const savedObject = await Object.findByPk(objectId);
+  res.status(200).json(savedObject);
+})
