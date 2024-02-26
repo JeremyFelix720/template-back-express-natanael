@@ -21,3 +21,9 @@ GET {{start_url}}/api/object/
 
 ###
 GET {{start_url}}/api/object/1
+
+
+
+
+###
+DELETE {{start_url}}/api/object/1

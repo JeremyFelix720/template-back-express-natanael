@@ -36,3 +36,15 @@ objectRouter.get("/:id", async (req, res) => {
   const savedObject = await Object.findByPk(objectId);
   res.status(200).json(savedObject);
 })
+
+// Suppression d'un objet
+objectRouter.delete("/:id", async (req, res) => {
+  const savedObject = await Object.findOne({ where: { id: req.params.id } });
+  if (savedObject) {
+      await savedObject.destroy();
+      res.end("Object deleted");
+  }
+  else {
+      res.end("Object not found");
+  }
+});
