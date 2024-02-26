@@ -21,3 +21,10 @@ objectRouter.post("/add", async (req, res) => {
     }
   )
 })
+
+
+// Lecture des objets
+objectRouter.get("/", async (req, res) => {
+  const objects = await Object.findAll();
+  res.json(objects);
+});

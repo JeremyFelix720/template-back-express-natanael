@@ -17,10 +17,4 @@ Content-Type: application/json
 }
 
 ###
-POST {{start_url}}/api/object/add
-Content-Type: application/json
-
-{
-  "name": "object 2",
-  "quantity": 8
-}
+GET {{start_url}}/api/object/
