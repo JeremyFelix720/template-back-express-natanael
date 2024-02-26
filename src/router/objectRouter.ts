@@ -37,6 +37,26 @@ objectRouter.get("/:id", async (req, res) => {
   res.status(200).json(savedObject);
 })
 
+
+// Modification d'un utilisateur
+objectRouter.put("/:id", async (req, res) => {
+
+  const objectId = req.params.id;
+  const objectName = req.body.name;
+  const objectQuantity = req.body.quantity;
+
+  const objectModified = {
+    name: objectName,
+    quantity: objectQuantity,
+  };
+
+  await Object.update(objectModified, {where:
+      {id: objectId}
+    });
+  res.status(200).json(objectModified);
+})
+
+
 // Suppression d'un objet
 objectRouter.delete("/:id", async (req, res) => {
   const savedObject = await Object.findOne({ where: { id: req.params.id } });
