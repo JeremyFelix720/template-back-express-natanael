@@ -1,5 +1,26 @@
-###
-GET http://localhost:3022/
+@start_url = http://localhost:3022
 
 ###
-GET http://localhost:3022/toto
+GET {{start_url}}/
+
+###
+GET {{start_url}}/toto
+
+
+###
+POST {{start_url}}/api/object/add
+Content-Type: application/json
+
+{
+  "name": "object 1",
+  "quantity": 2
+}
+
+###
+POST {{start_url}}/api/object/add
+Content-Type: application/json
+
+{
+  "name": "object 2",
+  "quantity": 8
+}
