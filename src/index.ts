@@ -7,8 +7,11 @@ import { Sequelize } from 'sequelize';  // Voir : https://sequelize.org/docs/v6/
 // Import des tables principales
 import { UserModel } from './models/UserModel';
 import { ObjectModel } from './models/ObjectModel';
-import { objectRouter } from "./router/objectRouter";
+
+// Import des routers
 import { userRouter } from "./router/userRouter";
+import { authRouter } from "./router/authRouter";
+import { objectRouter } from "./router/objectRouter";
 
 
 require('dotenv').config();
@@ -85,10 +88,9 @@ app.get('/toto', (req, res) => {
 //apiRouter.use('/users', userRouter);
 
 app.use('/api/users', userRouter);
+app.use('/api/auth/', authRouter);
 app.use('/api/objects', objectRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-  
-  

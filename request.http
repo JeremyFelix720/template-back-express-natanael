@@ -1,7 +1,5 @@
 @start_url = http://localhost:3022
-
-
-
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlRob21hcyIsImVtYWlsIjoidGhvbWFzbGFmb3JnZUBnbWFpbC5jb20iLCJjcmVhdGVkQXQiOiIyMDI0LTAyLTI3VDE0OjIwOjEzLjk4NloiLCJ1cGRhdGVkQXQiOiIyMDI0LTAyLTI3VDE0OjIwOjEzLjk4NloiLCJpYXQiOjE3MDkwNDc5MjF9.spPKft29vi3qn9nt7D0fShTY3jbz_nP77G3m2Cljoqg
 
 
 ###
@@ -23,6 +21,31 @@ Content-Type: application/json
   "email": "jeremyfelix41@gmail.com",
   "password": "Bloupy73!"
 }
+
+###
+POST {{start_url}}/api/auth/logout
+Authorization: Bearer {{token}}
+
+
+
+###
+POST {{start_url}}/api/auth/local
+content-type: application/json
+
+{
+  "identifier": "thomaslaforge@gmail.com",
+  "password": "tomtom1234"
+}
+
+###
+POST {{start_url}}/api/auth/local
+content-type: application/json
+
+{
+  "identifier": "jeremyfelix41@gmail.com",
+  "password": "Bloupy73!"
+}
+
 
 
 
