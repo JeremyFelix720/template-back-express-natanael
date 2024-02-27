@@ -38,22 +38,22 @@ objectRouter.get("/:id", async (req, res) => {
 })
 
 
-// Modification d'un utilisateur
+// Modification d'un objet
 objectRouter.put("/:id", async (req, res) => {
 
   const objectId = req.params.id;
   const objectName = req.body.name;
   const objectQuantity = req.body.quantity;
 
-  const objectModified = {
+  const modifiedObject = {
     name: objectName,
     quantity: objectQuantity,
   };
 
-  await Object.update(objectModified, {where:
+  await Object.update(modifiedObject, {where:
       {id: objectId}
     });
-  res.status(200).json(objectModified);
+  res.status(200).json(modifiedObject);
 })
 
 
