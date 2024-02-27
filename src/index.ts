@@ -13,7 +13,9 @@ require('dotenv').config();
 
 const app = express();
 app.use(cors());
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
+app.use(express.json());
+
 
 const port = process.env.PORT ? parseInt(process.env.PORT as string) : 3000
 /*

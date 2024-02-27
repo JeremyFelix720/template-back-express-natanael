@@ -27,7 +27,7 @@ Content-Type: application/json
 
 {
   "name": "object 42",
-  "quantity": 69
+  "quantity": 65
 }
 
 ###
