@@ -1,5 +1,6 @@
 import { Router, Response, Request } from "express";
 import { Object } from "../index";
+
 export const objectRouter = Router();
 
 // Ajout d'un objet

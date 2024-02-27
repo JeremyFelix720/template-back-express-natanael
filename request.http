@@ -1,5 +1,32 @@
 @start_url = http://localhost:3022
 
+
+
+
+
+###
+POST {{start_url}}/api/users/local/register
+Content-Type: application/json
+
+{
+  "name": "Thomas",
+  "email": "thomaslaforge@gmail.com",
+  "password": "tomtom1234"
+}
+
+###
+POST {{start_url}}/api/users/local/register
+Content-Type: application/json
+
+{
+  "name": "Jérémy",
+  "email": "jeremyfelix41@gmail.com",
+  "password": "Bloupy73!"
+}
+
+
+
+
 ###
 GET {{start_url}}/
 
@@ -7,7 +34,7 @@ GET {{start_url}}/
 GET {{start_url}}/toto
 
 ###
-POST {{start_url}}/api/object/
+POST {{start_url}}/api/objects/
 Content-Type: application/json
 
 {
@@ -16,13 +43,13 @@ Content-Type: application/json
 }
 
 ###
-GET {{start_url}}/api/object/
+GET {{start_url}}/api/objects/
 
 ###
-GET {{start_url}}/api/object/1
+GET {{start_url}}/api/objects/1
 
 ###
-PUT {{start_url}}/api/object/2
+PUT {{start_url}}/api/objects/2
 Content-Type: application/json
 
 {
@@ -31,4 +58,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{start_url}}/api/object/1
+DELETE {{start_url}}/api/objects/1

@@ -1,13 +1,14 @@
-import express from "express"
+import express, { Router } from "express"
 import "dotenv/config"
 import cors from 'cors'
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 import { Sequelize } from 'sequelize';  // Voir : https://sequelize.org/docs/v6/getting-started/
 
 // Import des tables principales
 import { UserModel } from './models/UserModel';
 import { ObjectModel } from './models/ObjectModel';
 import { objectRouter } from "./router/objectRouter";
+import { userRouter } from "./router/userRouter";
 
 
 require('dotenv').config();
@@ -26,6 +27,9 @@ const username = process.env.USERNAME as string;
 const password = process.env.PASSWORD as string;
 const server = process.env.SERVER as string;
 */
+
+const apiRouter = express.Router(); // Initialisation des routes
+
 
 // Création de la BDD
 export const sequelize = new Sequelize({
@@ -69,7 +73,6 @@ async function connexionTest() {
 connexionTest();
 
 // ROUTING
-app.use('/api/object/', objectRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -79,8 +82,13 @@ app.get('/toto', (req, res) => {
     res.send('Toto');
   });
 
-  app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-  });
+//apiRouter.use('/users', userRouter);
+
+app.use('/api/users', userRouter);
+app.use('/api/objects', objectRouter);
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
   
   
