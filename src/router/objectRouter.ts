@@ -8,7 +8,7 @@ objectRouter.post("/add", async (req, res) => {
   const objectName = req.body.name;
   const objectQuantity = req.body.quantity;
  
-  await Object.create({
+  const addedObject = await Object.create({
     name: objectName,
     quantity: objectQuantity,
   });
@@ -16,8 +16,7 @@ objectRouter.post("/add", async (req, res) => {
   res.status(200).json(
     {
       message: "The object has been added successfully.",
-      name: objectName,
-      quantity: objectQuantity,
+      ...addedObject.dataValues
     }
   )
 })
