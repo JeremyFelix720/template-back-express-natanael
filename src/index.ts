@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import { Sequelize } from 'sequelize';  // Voir : https://sequelize.org/docs/v6/getting-started/
 
 // Import des tables principales
+import { UserModel } from './models/UserModel';
 import { ObjectModel } from './models/ObjectModel';
 import { objectRouter } from "./router/objectRouter";
 
@@ -47,6 +48,7 @@ const sequelize = new Sequelize(database, username, password, {
 */
 
 // Création des tables principales par Sequelize
+export const User = UserModel(sequelize);
 export const Object = ObjectModel(sequelize);
 
 
