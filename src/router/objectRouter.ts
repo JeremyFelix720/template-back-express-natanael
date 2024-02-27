@@ -3,7 +3,7 @@ import { Object } from "../index";
 export const objectRouter = Router();
 
 // Ajout d'un objet
-objectRouter.post("/add", async (req, res) => {
+objectRouter.post("/", async (req, res) => {
  
   const objectName = req.body.name;
   const objectQuantity = req.body.quantity;

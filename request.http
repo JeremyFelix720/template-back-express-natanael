@@ -7,7 +7,7 @@ GET {{start_url}}/
 GET {{start_url}}/toto
 
 ###
-POST {{start_url}}/api/object/add
+POST {{start_url}}/api/object/
 Content-Type: application/json
 
 {
