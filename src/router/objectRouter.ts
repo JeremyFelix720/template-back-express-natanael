@@ -15,7 +15,7 @@ objectRouter.post("/add", async (req, res) => {
   
   res.status(200).json(
     {
-      message: "L'objet a bien été ajouté.",
+      message: "The object has been added successfully.",
       name: objectName,
       quantity: objectQuantity,
     }
@@ -62,9 +62,9 @@ objectRouter.delete("/:id", async (req, res) => {
   const savedObject = await Object.findOne({ where: { id: req.params.id } });
   if (savedObject) {
       await savedObject.destroy();
-      res.end("Object deleted");
+      res.end("The object has been deleted successfully.");
   }
   else {
-      res.end("Object not found");
+      res.end("The object was not found.");
   }
 });
