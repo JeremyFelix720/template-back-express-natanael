@@ -17,7 +17,8 @@ app.use(cors());
 app.use(express.json());
 
 
-const port = process.env.PORT ? parseInt(process.env.PORT as string) : 3000
+const port = process.env.PORT
+//const port = process.env.PORT ? parseInt(process.env.PORT as string) : 3000
 /*
 const database = process.env.DATABASE as string;
 const username = process.env.USERNAME as string;
